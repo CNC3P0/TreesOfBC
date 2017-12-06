@@ -8,12 +8,17 @@
     {
       "name": "Dore",
       "icon": "dore",
-      "description": "Kerr's Pink is a potato cultivar in wide production in Ireland and the United Kingdom and many other countries. Although often quoted as an Irish potato, the cultivar was actually created by J. Henry of Cornhill, Scotland, in 1907"
+      "description": "Dutch variety of potato from the province of Zeeland."
     },
     {
       "name": "Duke of York",
       "icon": "duke_of_york",
-      "description": "Kerr's Pink is a potato cultivar in wide production in Ireland and the United Kingdom and many other countries. Although often quoted as an Irish potato, the cultivar was actually created by J. Henry of Cornhill, Scotland, in 1907"
+      "description": "A vigorous red sport of a potato, Duke of York produces large, oval, red-skinned tubers with moist yellow flesh of superb flavour."
+    },
+    {
+      "name": "Potato of the Year",
+      "icon": "king_edward",
+      "description": "WOW, what a potato. Well-deserved win!"
     }
   ]
 }

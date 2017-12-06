@@ -12,8 +12,8 @@ import java.util.HashMap;
 
 class PotatoAdapter extends BaseAdapter {
     private Context mContext;
-    public ArrayList<HashMap<String, String>> potatoInfo = new ArrayList<HashMap<String, String>>();
-    public ArrayList<Integer> potatoIcons = new ArrayList<Integer>();
+    public ArrayList<HashMap<String, String>> potatoInfo = new ArrayList<>();
+    public ArrayList<Integer> potatoIcons = new ArrayList<>();
 
     public PotatoAdapter(Context c) {
         mContext = c;
@@ -47,5 +47,4 @@ class PotatoAdapter extends BaseAdapter {
         imageView.setImageResource(potatoIcons.get(position));
         return imageView;
     }
-
 }

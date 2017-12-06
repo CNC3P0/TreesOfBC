@@ -1,8 +1,9 @@
 package com.potatolist;
 
+import android.content.Intent;
 import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,8 +25,8 @@ public class PotatoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_potato);
 
-        PotatoAdapter myAdapter = new PotatoAdapter(this);
-        GridView gridview = (GridView) findViewById(R.id.gridview);
+        final PotatoAdapter myAdapter = new PotatoAdapter(this);
+        GridView gridview = findViewById(R.id.gridview);
         gridview.setAdapter(myAdapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -33,33 +34,41 @@ public class PotatoActivity extends AppCompatActivity {
                                     int position, long id) {
                 Toast.makeText(PotatoActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+                bundle.putString("POSITION", "potato in position " + position);
+                HashMap<String, String> pnamedesc;
+                pnamedesc = myAdapter.potatoInfo.get(position);
+                bundle.putString("NAME", pnamedesc.get("name"));
+                bundle.putString("DESCRIPTION", pnamedesc.get("description"));
+                bundle.putInt("ICON", myAdapter.potatoIcons.get(position));
+                sendMessage(bundle);
             }
         });
 
         try {
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
-            JSONArray m_jArry = obj.getJSONArray("potatoes");
-            HashMap<String, String> p;
+            JSONObject obj = new JSONObject(loadJSONFromAsset());   //gets JSON file as String and assigns to obj
+            JSONArray m_jArry = obj.getJSONArray("potatoes"); //gets portion of JSON at index "potatoes" and assigns to m_jArry
+            HashMap<String, String> p;                              //creates a hashmap (key/value pair) called p
 
-            for (int i = 0; i < m_jArry.length(); i++) {
-                JSONObject jo_inside = m_jArry.getJSONObject(i);
-                String p_name = jo_inside.getString("name");
-                String p_description = jo_inside.getString("description");
-                String p_icon = jo_inside.getString("icon");
+            for (int i = 0; i < m_jArry.length(); i++) {            //for each item in m_jArry
+                JSONObject jo_inside = m_jArry.getJSONObject(i);    //assign item to jo_inside
+                String p_name = jo_inside.getString("name");  //extra name from jo_inside
+                String p_description = jo_inside.getString("description"); //extra description from jo_inside
+                String p_icon = jo_inside.getString("icon");  //extra icon from jo_inside
 
                 Log.d("name-->", jo_inside.getString("name"));
                 Log.d("icon-->", jo_inside.getString("icon"));
 
                 //Add your values in your `ArrayList` as below:
-                p = new HashMap<String, String>();
-                p.put("name", p_name);
-                p.put("description", p_description);
+                p = new HashMap<>();
+                p.put("name", p_name);                              //then add name to p as key
+                p.put("description", p_description);                //and add description to p as value
 
-                myAdapter.potatoInfo.add(p);
+                myAdapter.potatoInfo.add(p);                        //then add p to potatoInfo Array in myAdapter
 
-                Resources resources = getResources();
-                int pIconId = resources.getIdentifier(p_icon, "drawable", getPackageName());
-                myAdapter.potatoIcons.add(pIconId);
+                Resources resources = getResources();               //create a Resource object called resource
+                int pIconId = resources.getIdentifier(p_icon, "drawable", getPackageName()); //pull out ID of image matching p_icon
+                myAdapter.potatoIcons.add(pIconId);                 // add ID to potatoIcons array in myAdapter
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -80,5 +89,17 @@ public class PotatoActivity extends AppCompatActivity {
             return null;
         }
         return json;
+    }
+
+    public void sendMessage(Bundle bundle) {
+        Intent intent = new Intent(this, PotatoDisplayer.class);
+        //EditText editText = (EditText) findViewById(R.id.editText);
+        //String message = editText.getText().toString();
+        //Bundle bundle = new Bundle();
+        //bundle.putString();
+        String message = "potato info";
+        //intent.putExtra("MESSAGE", message);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PotatoList</string>
+    <string name="potatoes_go_here">potatoes go here</string>
 </resources>
