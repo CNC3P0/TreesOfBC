@@ -43,7 +43,6 @@ class PotatoAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
-
         imageView.setImageResource(potatoIcons.get(position));
         return imageView;
     }

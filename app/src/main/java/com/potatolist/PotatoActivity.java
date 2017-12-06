@@ -93,12 +93,7 @@ public class PotatoActivity extends AppCompatActivity {
 
     public void sendMessage(Bundle bundle) {
         Intent intent = new Intent(this, PotatoDisplayer.class);
-        //EditText editText = (EditText) findViewById(R.id.editText);
-        //String message = editText.getText().toString();
-        //Bundle bundle = new Bundle();
-        //bundle.putString();
         String message = "potato info";
-        //intent.putExtra("MESSAGE", message);
         intent.putExtras(bundle);
         startActivity(intent);
     }
