@@ -18,36 +18,36 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 
-public class PotatoActivity extends AppCompatActivity {
+public class TreesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_potato);
+        setContentView(R.layout.activity_trees);
 
-        final PotatoAdapter myAdapter = new PotatoAdapter(this);
+        final TreesAdapter myAdapter = new TreesAdapter(this);
         GridView gridview = findViewById(R.id.gridview);
         gridview.setAdapter(myAdapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(PotatoActivity.this, "" + position,
+                Toast.makeText(TreesActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
                 Bundle bundle = new Bundle();
-                bundle.putString("POSITION", "potato in position " + position);
+                bundle.putString("POSITION", "tree in position " + position);
                 HashMap<String, String> pnamedesc;
-                pnamedesc = myAdapter.potatoInfo.get(position);
+                pnamedesc = myAdapter.treeInfo.get(position);
                 bundle.putString("NAME", pnamedesc.get("name"));
                 bundle.putString("DESCRIPTION", pnamedesc.get("description"));
-                bundle.putInt("ICON", myAdapter.potatoIcons.get(position));
+                bundle.putInt("ICON", myAdapter.treeIcons.get(position));
                 sendMessage(bundle);
             }
         });
 
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());   //gets JSON file as String and assigns to obj
-            JSONArray m_jArry = obj.getJSONArray("potatoes"); //gets portion of JSON at index "potatoes" and assigns to m_jArry
+            JSONArray m_jArry = obj.getJSONArray("trees"); //gets portion of JSON at index "trees" and assigns to m_jArry
             HashMap<String, String> p;                              //creates a hashmap (key/value pair) called p
 
             for (int i = 0; i < m_jArry.length(); i++) {            //for each item in m_jArry
@@ -64,11 +64,11 @@ public class PotatoActivity extends AppCompatActivity {
                 p.put("name", p_name);                              //then add name to p as key
                 p.put("description", p_description);                //and add description to p as value
 
-                myAdapter.potatoInfo.add(p);                        //then add p to potatoInfo Array in myAdapter
+                myAdapter.treeInfo.add(p);                        //then add p to treeInfo Array in myAdapter
 
                 Resources resources = getResources();               //create a Resource object called resource
                 int pIconId = resources.getIdentifier(p_icon, "drawable", getPackageName()); //pull out ID of image matching p_icon
-                myAdapter.potatoIcons.add(pIconId);                 // add ID to potatoIcons array in myAdapter
+                myAdapter.treeIcons.add(pIconId);                 // add ID to treeIcons array in myAdapter
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -92,8 +92,8 @@ public class PotatoActivity extends AppCompatActivity {
     }
 
     public void sendMessage(Bundle bundle) {
-        Intent intent = new Intent(this, PotatoDisplayer.class);
-        String message = "potato info";
+        Intent intent = new Intent(this, TreesDisplayer.class);
+        String message = "tree info";
         intent.putExtras(bundle);
         startActivity(intent);
     }

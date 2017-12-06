@@ -1,46 +1,76 @@
 {
-  "potatoes": [
+  "trees": [
     {
-      "name": "Kerr's Pink",
-      "icon": "kerrs_pink",
-      "description": "Kerr's Pink is a potato cultivar in wide production in Ireland and the United Kingdom and many other countries. Although often quoted as an Irish potato, the cultivar was actually created by J. Henry of Cornhill, Scotland, in 1907"
+      "scientific_name": "Tsuga heterophylla",
+      "common_name": "western hemlock",
+      "image": "westernhemlock",
+      "description": "A large tree, it usually grows 30 to 50 metres tall. It has a rather narrow crown and conspicuously drooping new growth at the top of the tree. It has mostly down-sweeping branches and delicate feathery foliage."
     },
     {
-      "name": "Dore",
-      "icon": "dore",
-      "description": "Dutch variety of potato from the province of Zeeland."
+      "scientific_name": "Crataegus douglasii",
+      "common_name": "Black Hawthorn",
+      "image": "blackhawthorn",
+      "description": "A large shrub to small tree that grows up to 8 metres tall, armed with stout, straight thorns 1 to 2 centimetres long and bearing showy, white flowers during May and June. "
     },
     {
-      "name": "Duke of York",
-      "icon": "duke_of_york",
-      "description": "A vigorous red sport of a potato, Duke of York produces large, oval, red-skinned tubers with moist yellow flesh of superb flavour."
+      "scientific_name": "Populus tremuloides",
+      "common_name": "Trembling aspen",
+      "image": "tremblingaspen",
+      "description": "A slender, graceful tree with smooth, greenish-white bark; grows up to 25 metres tall; distinctive leaves that quiver in the slightest breeze."
     },
     {
-      "name": "Potato of the Year",
-      "icon": "king_edward",
-      "description": "WOW, what a potato. Well-deserved win!"
-    }
-  ],
-  "carrots": [
-    {
-      "name": "Carrot One",
-      "icon": "kerrs_pink",
-      "description": "Carrot One cultivar in wide production in Ireland and the United Kingdom and many other countries. Although often quoted as an Irish carrot, the cultivar was actually created by J. Henry of Cornhill, Scotland, in 1907"
+      "scientific_name": "Betula papyrifera",
+      "common_name": "Paper birch",
+      "image": "paperbirch",
+      "description": "A small to medium-sized tree, often with many stems, up to 30 metres tall. In forests, it has a slender trunk that often curves before extending to the narrow, oval-shaped crown. In the open, the crown is pyramid-shaped."
     },
     {
-      "name": "Carrot Two",
-      "icon": "dore",
-      "description": "Dutch variety of carrot from the province of Zeeland."
+      "scientific_name": "Thuja plicata",
+      "common_name": "Western redcedar",
+      "image": "westernredcedar",
+      "description": "A large tree, up to 60 metres tall when mature, with drooping branches; trunk often spreading out widely at the base."
     },
     {
-      "name": "Carrot Three",
-      "icon": "duke_of_york",
-      "description": "A vigorous red sport of a carrot, Carrot Three produces large, oval, red-skinned tubers with moist yellow flesh of superb flavour."
+      "scientific_name": "Populus balsamifera ssp. trichocarpa",
+      "common_name": "Black cottonwood",
+      "image": "blackcottonwood",
+      "description": "These hardy, straight-trunked trees have large, sticky, fragrant buds. On the coast, black cottonwoods can reach 50 metres tall, but balsam poplars usually reach only 25 metres."
     },
     {
-      "name": "Carrot of the Year",
-      "icon": "king_edward",
-      "description": "WOW, what a carrot. Well-deserved win!"
+      "scientific_name": "Pseudotsuga menziesii",
+      "common_name": "Douglas-fir",
+      "image": "douglasfir",
+      "description": "A large tree, reaching heights of 85 metres on the coast and 42 metres in the Interior. Older trees have a long, branch-free trunk and a short cylindrical crown with a flattened top. There are two varieties of Douglas-fir - coastal and Interior."
+    },
+    {
+      "scientific_name": "Larix occidentalis",
+      "common_name": "Western larch",
+      "image": "westernlarch",
+      "description": "Like all larches, it loses its needles in the autumn. This large, handsome tree can grow to 80 metres tall and 850 years of age."
+    },
+    {
+      "scientific_name": "Quercus garryana",
+      "common_name": "Garry oak",
+      "image": "garryoak",
+      "description": "An attractive tree with thick, grooved, scaly, greyish-black bark and a round spreading crown; grows up to 20 metres tall."
+    },
+    {
+      "scientific_name": "Pinus ponderosa",
+      "common_name": "Ponderosa pine",
+      "image": "ponderosapine",
+      "description": "A large-crowned tree with a straight trunk, usually about 25 to 30 metres tall, but sometimes reaching a height of 50 metres and a diameter of 2 metres."
+    },
+    {
+      "scientific_name": "Taxus brevifolia",
+      "common_name": "Western yew",
+      "image": "westernyew",
+      "description": "A low spreading shrub to a small tree, 5 to 15 metres tall; young trees are often square in profile, becoming more cone-shaped with age. The trunk is twisted and becomes very wide near the base, with horizontally spreading branches."
+    },
+    {
+      "scientific_name": "Picea glauca",
+      "common_name": "White spruce",
+      "image": "whitespruce",
+      "description": "A large tree with a narrow crown, it can grow to 40 metres tall and 1 metre in diameter when mature."
     }
   ]
 }

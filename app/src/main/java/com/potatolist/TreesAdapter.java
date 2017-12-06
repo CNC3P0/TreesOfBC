@@ -10,17 +10,17 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class PotatoAdapter extends BaseAdapter {
+class TreesAdapter extends BaseAdapter {
     private Context mContext;
-    public ArrayList<HashMap<String, String>> potatoInfo = new ArrayList<>();
-    public ArrayList<Integer> potatoIcons = new ArrayList<>();
+    public ArrayList<HashMap<String, String>> treeInfo = new ArrayList<>();
+    public ArrayList<Integer> treeIcons = new ArrayList<>();
 
-    public PotatoAdapter(Context c) {
+    public TreesAdapter(Context c) {
         mContext = c;
     }
 
     public int getCount() {
-        return potatoInfo.size();
+        return treeInfo.size();
     }
 
     public Object getItem(int position) {
@@ -43,7 +43,7 @@ class PotatoAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(potatoIcons.get(position));
+        imageView.setImageResource(treeIcons.get(position));
         return imageView;
     }
 }
