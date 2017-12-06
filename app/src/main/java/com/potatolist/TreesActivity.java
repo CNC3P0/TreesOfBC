@@ -51,7 +51,7 @@ public class TreesActivity extends AppCompatActivity {
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());   //gets JSON file as String and assigns to obj
             JSONArray m_jArry = obj.getJSONArray("trees"); //gets portion of JSON at index "trees" and assigns to m_jArry
-            HashMap<String, String[]> p;                              //creates a hashmap (key/value pair) called p
+            HashMap<String, String> p;                              //creates a hashmap (key/value pair) called p
 
             for (int i = 0; i < m_jArry.length(); i++) {            //for each item in m_jArry
                 JSONObject jo_inside = m_jArry.getJSONObject(i);    //assign item to jo_inside
@@ -67,12 +67,12 @@ public class TreesActivity extends AppCompatActivity {
 
                 //Add your values in your `ArrayList` as below:
                 p = new HashMap<>();
-                String[] sArray = new String[2];
-                sArray[0] = p_scientific_name;
-                sArray[1] = p_description;
+                //String[] sArray = new String[2];
+                //sArray[0] = p_scientific_name;
+                //sArray[1] = p_description;
                 p.put("common_name", p_common_name);                              //then add name to p as key
-                //p.put("scientific_name", p_scientific_name);
-                p.put("array", sArray);                //and add description to p as value
+                p.put("scientific_name", p_scientific_name);
+                p.put("description", p_description);                //and add description to p as value
 
                 myAdapter.treeInfo.add(p);                        //then add p to treeInfo Array in myAdapter
 
