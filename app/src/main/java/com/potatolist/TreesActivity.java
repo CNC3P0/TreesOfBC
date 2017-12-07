@@ -41,7 +41,7 @@ public class TreesActivity extends AppCompatActivity {
                 HashMap<String, String> pnamedesc;
                 pnamedesc = myAdapter.treeInfo.get(position);
                 bundle.putString("COMMON_NAME", pnamedesc.get("common_name"));
-                bundle.putString("SCIENTIFIC_NAME", pnamedesc.get("common_name"));
+                bundle.putString("SCIENTIFIC_NAME", pnamedesc.get("scientific_name"));
                 bundle.putString("DESCRIPTION", pnamedesc.get("description"));
                 bundle.putInt("IMAGE", myAdapter.treeImages.get(position));
                 sendMessage(bundle);

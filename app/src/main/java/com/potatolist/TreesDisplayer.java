@@ -15,7 +15,7 @@ public class TreesDisplayer extends AppCompatActivity {
         TextView textView = findViewById(R.id.tv);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String tree = bundle.get("COMMON_NAME") + "\n\n" + bundle.get("DESCRIPTION");
+        String tree = bundle.get("COMMON_NAME") + "\n\n" + bundle.get("SCIENTIFIC_NAME") + "\n\n" + bundle.get("DESCRIPTION");
         ImageView imageView = findViewById(R.id.imageView);
         imageView.setImageResource(bundle.getInt("IMAGE"));
         textView.setText(tree);
