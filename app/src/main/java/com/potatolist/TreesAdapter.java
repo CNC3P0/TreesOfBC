@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ class TreesAdapter extends BaseAdapter {
     private Context mContext;
     public ArrayList<HashMap<String, String>> treeInfo = new ArrayList<>();
     public ArrayList<Integer> treeImages = new ArrayList<>();
+    public ArrayList<Integer> bigtreeImages = new ArrayList<>();
 
     public TreesAdapter(Context c) {
         mContext = c;

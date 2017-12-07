@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,8 +15,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TreesActivity extends AppCompatActivity {
@@ -34,8 +31,7 @@ public class TreesActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(TreesActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(TreesActivity.this, "" + position, Toast.LENGTH_SHORT).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("POSITION", "tree in position " + position);
                 HashMap<String, String> pnamedesc;
@@ -43,7 +39,7 @@ public class TreesActivity extends AppCompatActivity {
                 bundle.putString("COMMON_NAME", pnamedesc.get("common_name"));
                 bundle.putString("SCIENTIFIC_NAME", pnamedesc.get("scientific_name"));
                 bundle.putString("DESCRIPTION", pnamedesc.get("description"));
-                bundle.putInt("IMAGE", myAdapter.treeImages.get(position));
+                bundle.putInt("IMAGE", myAdapter.bigtreeImages.get(position));
                 sendMessage(bundle);
             }
         });
@@ -67,9 +63,6 @@ public class TreesActivity extends AppCompatActivity {
 
                 //Add your values in your `ArrayList` as below:
                 p = new HashMap<>();
-                //String[] sArray = new String[2];
-                //sArray[0] = p_scientific_name;
-                //sArray[1] = p_description;
                 p.put("common_name", p_common_name);                              //then add name to p as key
                 p.put("scientific_name", p_scientific_name);
                 p.put("description", p_description);                //and add description to p as value
@@ -79,6 +72,8 @@ public class TreesActivity extends AppCompatActivity {
                 Resources resources = getResources();               //create a Resource object called resource
                 int pIconId = resources.getIdentifier(p_icon + "_small", "drawable", getPackageName()); //pull out ID of image matching p_icon
                 myAdapter.treeImages.add(pIconId);                 // add ID to treeImages array in myAdapter
+                pIconId = resources.getIdentifier(p_icon + "_big", "drawable", getPackageName());
+                myAdapter.bigtreeImages.add(pIconId);
 
                 //Toast.makeText(this, "" + pIconId, Toast.LENGTH_SHORT).show();
             }
